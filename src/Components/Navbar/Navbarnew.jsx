@@ -5,6 +5,8 @@ import { Logouthandleraction } from "../../Redux/action.js";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
+
 export const Navbarnew = () => {
   const userId = useSelector((state) => state.mernQuize.userId);
   const userName = useSelector((state) => state.mernQuize.userName);
@@ -42,7 +44,7 @@ export const Navbarnew = () => {
       </Link>
 
       <div className="w-2/5 ml-14 ">
-        <img className="w-96 h-24" src="./MERN2.png" alt="" />
+        <img className="w-96 h-24" src="https://www.shutterstock.com/shutterstock/videos/1006818760/thumb/2.jpg?ip=x480"alt="" />
         {/* <div className="flex h-10 py-2 mt-1 bg-gray-200">
           <div className="w-3/4 ">
             <input

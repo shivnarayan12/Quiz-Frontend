@@ -21,20 +21,46 @@ export const QuizForm = () => {
     correctAnswer: "",
   });
 
+  const [dates , setDate] = useState(null)
+
 
   const handleQuiz = (event) => {
     event.preventDefault();
-    dispatch(quizSuccess(quiz));
+  
+    const date= dispatch(quizSuccess(quiz));
+    setDate(date);
+    console.log(date)
   };
+  // const handleUploadnew = (event) => {
+  //   event.preventDefault();
+  //   const obj = {
+  //     title: data[0].title,
+  //     questionArray: data,
+  //   };
+
+  //   dispatch(postQuizObj(obj));
+  // };
+
   const handleUploadnew = (event) => {
     event.preventDefault();
+    console.log(dates.payload); // Check the value of `data`
+  
+    if (dates.payload.length === 0 || !dates.payload) {
+      console.error("Data is empty or not properly defined");
+      return;
+    }
+   
+  
     const obj = {
-      title: data[0].title,
-      questionArray: data,
+      title: dates.payload.title,
+      questionArray: dates.payload,
     };
-
+    console.log(obj);
+  
     dispatch(postQuizObj(obj));
   };
+
+
   const handleType = (id) => (event) => {
     const { name, value } = event.target;
     setAns((prev) =>

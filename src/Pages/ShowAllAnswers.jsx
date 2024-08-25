@@ -5,7 +5,14 @@ import { Link } from "react-router-dom";
 export const ShowAllAnswers = () => {
   const resultUser = useSelector((state) => state.mernQuize.result);
   const singleQuiz = useSelector((state) => state?.mernQuize.QuizData);
-  const questionArr = singleQuiz[0]?.questionArray;
+  
+  const questionArr = singleQuiz.map((ele)=>{
+    return (
+      ele.questionArray
+    )
+  })
+  
+
 
   return (
     <div>
@@ -21,7 +28,7 @@ export const ShowAllAnswers = () => {
             return (
               <div className="h-16 mt-4 border-2 pl-4 ">
                 <p>
-                  {index + 1}) {e.questions}
+                  {index + 1} {e[0].questions}
                 </p>
               </div>
             );
@@ -33,11 +40,20 @@ export const ShowAllAnswers = () => {
               USER ANSWER
             </h1>
           </div>
-          {resultUser?.map((e) => {
-            return (
-              <div className="h-16 mt-4 border-2 text-center red">
-                <p>{e}</p>
-              </div>
+          {resultUser?.map((e , index) => {
+            return (<>
+             {
+                index < questionArr.length && (
+                  <div className="h-16 mt-4 border-2 text-center red">
+                  <p>{e}</p>
+                  </div>
+                )
+              
+                
+
+              }
+              </>
+      
             );
           })}
         </div>
@@ -50,7 +66,7 @@ export const ShowAllAnswers = () => {
           {questionArr?.map((e) => {
             return (
               <div className="h-16 mt-4 text-center border-2 red">
-                <p>{e.correctAnswer}</p>
+                <p>{e[0].correctAnswer}</p>
               </div>
             );
           })}

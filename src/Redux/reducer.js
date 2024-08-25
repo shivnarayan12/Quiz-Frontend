@@ -12,7 +12,7 @@ const init = {
   result: [],
   questions: [],
   Alluser: [],
-  ans: [],
+  ans: [], // Added for completeness, but not used in the reducer
 };
 
 export const QuizReducer = (state = init, action) => {
@@ -64,13 +64,11 @@ export const QuizReducer = (state = init, action) => {
         error: payload,
         loading: false,
       };
-
     case types.GETUSERID:
       return {
         ...state,
         userId: payload,
       };
-
     case types.GETUSERNAME:
       return {
         ...state,
@@ -91,7 +89,6 @@ export const QuizReducer = (state = init, action) => {
         userId: null,
         userName: null,
       };
-    //username
     case types.GETADMINNAME:
       return {
         ...state,
@@ -99,7 +96,6 @@ export const QuizReducer = (state = init, action) => {
         userId: null,
         userName: null,
       };
-
     case types.GET_ALL_USER_DATA_REQUEST:
       return {
         ...state,
@@ -122,15 +118,15 @@ export const QuizReducer = (state = init, action) => {
     case types.POST_USER_RESULT_SUCCESS:
       return {
         ...state,
-        isLoading: false,
-        isError: false,
+        loading: false,
+        error: "",
         user: payload,
       };
     case types.SET_USER_RESULT_SUCCESS:
       return {
         ...state,
-        isLoading: false,
-        isError: false,
+        loading: false,
+        error: "",
         result: payload,
       };
     default:

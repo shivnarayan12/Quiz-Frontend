@@ -33,7 +33,8 @@ export const Login = () => {
     axios
       .post("https://quiz-1-ql1e.onrender.com/login", user)
       .then((res) => {
-        if (res.data.user.email == "sudhirchavhan100@gmail.com") {
+        console.log(res.data);
+        if (res.data.user.email == "abcdg@gmail.com") {
           dispatch(loginAdminId(res.data.user._id));
           dispatch(loginAdminName(res.data.user.name));
           toast(`Welcome Admin ${res.data.user.name}`, {

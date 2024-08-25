@@ -7,6 +7,7 @@ import { Quiz } from "./Quiz";
 
 export const Quizes = () => {
   const singleQuiz = useSelector((state) => state?.mernQuize.QuizData);
+  console.log(singleQuiz);
   const params = useParams();
   const dispatch = useDispatch();
   const [isLoading, setLoading] = useState(true);

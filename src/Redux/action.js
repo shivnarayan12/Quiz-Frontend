@@ -136,12 +136,32 @@ export const postQuizObj = (obj) => (dispatch) => {
   axios
     .post("https://quiz-1-ql1e.onrender.com/admin", obj)
     .then((res) => {
+      console.log("question send done")
      
     })
     .catch((err) => {
-      
+      console.log(err)
     });
 };
+
+// export const postQuizObj = (obj) => async (dispatch) => {
+//   dispatch({ type: types.POST_QUIZ_REQUEST }); // Dispatch request action
+
+//   try {
+//     const response = await axios.post('https://quiz-1-ql1e.onrender.com/admin', obj);
+//     dispatch({
+//       type: types.POST_QUIZ_SUCCESS,
+//       payload: response.data, // Send response data to the reducer
+//     });
+//     // Optionally show success notification or perform additional actions
+//   } catch (error) {
+//     dispatch({
+//       type: types.POST_QUIZ_FAILURE,
+//       payload: error.message || 'An error occurred', // Send error message to the reducer
+//     });
+//     // Optionally show error notification or perform additional actions
+//   }
+// };
 
 // ----------------------------- fetching quiz data subject wise -------------
 
@@ -163,10 +183,21 @@ const fetchQuizFailure = (payload) => {
     payload,
   };
 };
-export const fetchQuizDataFrombackend = () => (dispatch) => {
-  axios
-    .get("https://quiz-1-ql1e.onrender.com/api/quiz")
-    .then((res) => dispatch(fetchQuizSuccess(res.data)))
+export const fetchQuizDataFrombackend = (setLoading , setData , setDb) => async (dispatch) => {
+  setLoading(true);
+  setDb(true)
+  await axios
+    .get("https://quiz-1-ql1e.onrender.com/quiz")
+    .then((res) =>{ 
+     
+      localStorage.setItem('data',JSON.stringify(res.data));
+      console.log("response" , res.data);
+      setData(res.data);
+      dispatch(fetchQuizSuccess(res.data))
+      setLoading(false);
+    
+    })
+    
     .catch((err) => console.log(err));
 };
 

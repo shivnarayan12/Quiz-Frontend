@@ -8,10 +8,11 @@ import { Link } from "react-router-dom";
 
 export const Quiz = (props) => {
   const questionArr = props.questionArr;
+ 
   const data = useSelector((state) => state?.mernQuize?.QuizData);
   const result = useSelector((state) => state?.mernQuize?.result);
   const userID = useSelector((state) => state?.mernQuize?.userId);
-console.log("data",data)
+
   const quizID = data[0]._id;
   const dispatch = useDispatch();
 
@@ -35,7 +36,7 @@ console.log("data",data)
           <div className="flex w-4/5 pl-24 ml-12">
             <h1 className="text-2xl m-2 text-black-400/25">{num + 1})</h1>
             <h1 className="text-2xl m-2 text-black-400/25">
-              {questionArr[num]?.questions}
+              {questionArr[num][0]?.questions}
             </h1>
           </div>
           <div className="border-teal-500 rounded-2xl absolute  right-24 top-32 border-2 mb-8 p-1 pl-2  pr-2 ">
@@ -48,7 +49,7 @@ console.log("data",data)
           </div>
         </div>
         <ol className=" w-3/5 ml-64" disabled={disable}>
-          {questionArr[num]?.options?.map((answer, index) => (
+          {questionArr[num][0]?.options?.map((answer, index) => (
             <li
               key={index}
               className={
