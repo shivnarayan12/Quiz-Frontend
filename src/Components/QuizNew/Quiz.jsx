@@ -12,6 +12,7 @@ export const Quiz = (props) => {
   const data = useSelector((state) => state?.mernQuize?.QuizData);
   const result = useSelector((state) => state?.mernQuize?.result);
   const userID = useSelector((state) => state?.mernQuize?.userId);
+  console.log("inquiz", questionArr);
 
   const quizID = data[0]._id;
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ export const Quiz = (props) => {
             {/* <video className="w-full" src="./businessanalysis.mp4" /> */}
           </div>
           <div className="flex w-4/5 pl-24 ml-12">
-            <h1 className="text-2xl m-2 text-black-400/25">{num + 1})</h1>
+            <h1 className="text-2xl m-2 text-black-400/25">{num + 1}</h1>
             <h1 className="text-2xl m-2 text-black-400/25">
               {questionArr[num][0]?.questions}
             </h1>

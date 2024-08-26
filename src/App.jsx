@@ -24,8 +24,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/quiz/html" element={<NewQuizPage />} />
         <Route path="quiz/css" element={<NewQuizPage />} />
-        <Route path="quiz/Javascript" element={<NewQuizPage />} />
-        <Route path="quiz/React" element={<NewQuizPage />} />
+        <Route path="quiz/react" element={<NewQuizPage />} />
+        <Route path="quiz/javascript" element={<NewQuizPage />} />
         <Route path="/quiz/:id" element={<Quizes />} />
         <Route path="quiz/mongodb" element={<NewQuizPage />} />
         <Route path="/admin" element={<Admin />} />

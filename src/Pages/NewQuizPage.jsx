@@ -24,13 +24,6 @@ export const NewQuizPage = () => {
 
 if( !loading && db){
 
- 
-
-  
-  
-  
-  
-
   const handleAnswer = (index, e, el) => {
     if (clickoption == false) {
       if (el.answer[0][index] === el.correctAnswer) {
@@ -46,6 +39,7 @@ if( !loading && db){
       
   const filtertopicwise = data.filter((el) => {
  
+     console.log("fdjf",pathname);
     return pathname === el.title.toLowerCase();
   });
 
@@ -63,7 +57,7 @@ if( !loading && db){
 x=newfilterquestions;
 
 
-
+console.log("new",newfilterquestions);
   
 
   const handlecount = (index) => {

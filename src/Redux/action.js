@@ -132,11 +132,13 @@ export const deleteUserByAdmin = (payload) => (dispatch) => {
 
 // ----------post quiz--------------
 
-export const postQuizObj = (obj) => (dispatch) => {
-  axios
+export const postQuizObj = (obj)=> async (dispatch)=> {
+  console.log("hello" , obj);
+await  axios
     .post("https://quiz-1-ql1e.onrender.com/admin", obj)
     .then((res) => {
-      console.log("question send done")
+      console.log("question send done",res)
+      console.log("hello");
      
     })
     .catch((err) => {
@@ -191,6 +193,7 @@ export const fetchQuizDataFrombackend = (setLoading , setData , setDb) => async 
     .then((res) =>{ 
      
       localStorage.setItem('data',JSON.stringify(res.data));
+      
       console.log("response" , res.data);
       setData(res.data);
       dispatch(fetchQuizSuccess(res.data))
@@ -200,6 +203,7 @@ export const fetchQuizDataFrombackend = (setLoading , setData , setDb) => async 
     
     .catch((err) => console.log(err));
 };
+
 
 export const getQuiz = (params) => (dispatch) => {
   axios

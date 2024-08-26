@@ -31,6 +31,7 @@ export const Login = () => {
 
   const login = () => {
     axios
+   
       .post("https://quiz-1-ql1e.onrender.com/login", user)
       .then((res) => {
         console.log(res.data);
