@@ -100,7 +100,7 @@ export const Footer = () => {
                 style={{ marginRight: "2px" }}
               ></i>
               <span className="text-white text-xs xl:text-sm">
-                Yavatmal,Maharashtra
+                Mirzapur, Uttar Pradesh
               </span>
             </p>
             <p className="flex items-center my-1">
@@ -109,7 +109,7 @@ export const Footer = () => {
                 style={{ marginRight: "2px" }}
               ></i>
               <span className="text-white text-xs xl:text-sm">
-                sudhirchavhan100@gmail.com
+                shivnarayan9102002@gmail.com
               </span>
             </p>
             <p className="flex items-center my-1">
@@ -118,14 +118,14 @@ export const Footer = () => {
                 style={{ marginRight: "2px" }}
               ></i>
               <span className="text-white text-xs xl:text-sm">
-                +91 7774850751
+                +91 8172929582
               </span>
             </p>
           </div>
         </div>
       </div>
       <p className="text-white text-center mt-4 pb-4">
-        MERN Quiz App Designed and Developed By Sudhir P Chavhan.
+        Challenge Hub Designed and Developed By Shiv Narayan Singh.
       </p>
     </div>
   );

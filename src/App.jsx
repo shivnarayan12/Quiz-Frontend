@@ -28,6 +28,7 @@ function App() {
         <Route path="quiz/javascript" element={<NewQuizPage />} />
         <Route path="/quiz/:id" element={<Quizes />} />
         <Route path="quiz/mongodb" element={<NewQuizPage />} />
+        <Route path="quiz/redux" element={<NewQuizPage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/addquiz" element={<QuizForm />} />
         <Route path="/profile" element={<ProfileMain />} />
