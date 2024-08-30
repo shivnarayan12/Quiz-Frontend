@@ -46,10 +46,10 @@ export const Admin = () => {
           </div>
           <div className=" ml-32 leading-normal">
             <p className="text-lg text-black-100 leading-loose">
-              A Full Stack Web Developer 🚀 from Nagpur, India, currently 💻 I'm
-              doing my Full Stack Development from Masai School. I am passionate
+              A Full Stack Web Developer 🚀 from Mirzapur, India, currently 💻 I'm
+              doing my B.tech from Madan Mohan Malaviya University of technology, Gorakhpur. I am passionate
               about technology and want to learn & explore new technologies. I
-              love travelling and doing farming in free time.
+              love playing Cricket and doing farming in free time.
             </p>
           </div>
           <div className="flex mt-12 space-x-4 ml-32 ">
