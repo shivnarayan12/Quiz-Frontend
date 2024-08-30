@@ -40,7 +40,7 @@ export const Admin = () => {
                 className="title text-4xl font-semibold  text-sky-500 pb-4 ml-2 mt-0"
                 style={{ fontFamily: "Quicksand" }}
               >
-                Sudhir P Chavhan 👋
+                Shiv Narayan 👋
               </h1>{" "}
             </h1>
           </div>
@@ -125,7 +125,7 @@ export const Admin = () => {
         </div>
         <div className="w-5/12 p-16 ml-24">
           <img
-            src="./sudhir.jpg"
+            src="./shiv.jpg"
             alt="admin"
             className="h-[300px] w-[300px] rounded-full "
           />
